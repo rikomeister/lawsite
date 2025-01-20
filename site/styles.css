@@ -5,32 +5,52 @@ body {
     background-color: #2f3eb1;
 }
 
+/* Основни стилове за body */
+body {
+    margin: 0; /* Премахва отстоянията около страницата */
+    font-family: Arial, sans-serif; /* Определя основния шрифт */
+    color: #000; /* Цвят на текста */
+    background-color: #f4f4f4; /* Основен фон на страницата */
+}
+
+/* Фиксиран header, който остава при скролване */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #2f3eb1;
+    position: fixed; /* Фиксира header-а най-отгоре на страницата */
+    top: 0; /* Позиционира го в горната част */
+    width: 100%; /* Разтяга го по цялата ширина на екрана */
+    background-color: #141e61; /* Контрастен цвят за header */
+    color: #fff; /* Бял текст за по-добър контраст */
+    padding: 10px 20px; /* Вътрешни отстояния за естетика */
+    display: flex; /* Flexbox за подравняване на съдържанието */
+    justify-content: space-between; /* Разделя елементите в header-а равномерно */
+    align-items: center; /* Вертикално подравняване на елементите */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Сянка за по-добра видимост */
+    z-index: 1000; /* Поставя header-а над останалото съдържание */
 }
 
+/* Лого в header-а */
 .header .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 24px; /* Голям размер на текста за логото */
+    font-weight: bold; /* Удебелен текст */
 }
 
+/* Линкове в навигацията на header-а */
 .header nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
+    color: #fff; /* Бял цвят за линковете */
+    text-decoration: none; /* Премахва подчертаването */
+    margin: 0 15px; /* Отстояние между линковете */
+    font-size: 16px; /* Размер на текста на линковете */
+    font-weight: 500; /* Средно удебелен текст */
 }
 
+/* Ефект при задържане върху линковете */
 .header nav a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Подчертаване при hover */
 }
 
-.header .contact {
-    font-weight: bold;
+/* Оставя място за фиксирания header */
+main {
+    margin-top: 70px; /* Пространство под header-а */
 }
 
 .hero {
@@ -143,4 +163,140 @@ iframe {
 
 .contacts .right p {
     font-weight: bold;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2f3eb1;
+    color: #fff;
+}
+
+.iframe-container {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #1d2c74;
+}
+
+.contact-section div {
+    flex: 1;
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h3 {
+    margin-bottom: 10px;
+    color: #2f3eb1;
+}
+
+.contact-section p {
+    margin: 5px 0;
+}
+
+/* Респонсивност за таблети */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Респонсивност за телефони */
+@media (max-width: 480px) {
+    .iframe-container {
+        height: 300px;
+    }
+
+    .contact-section div {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .contact-section {
+        padding: 10px;
+    }
+}
+
+/* Основен стил за footer */
+.footer {
+    background-color: hsl(240, 2%, 31%);
+    padding: 20px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.social-box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-box a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-box.facebook {
+    background-color: #4267B2;
+}
+
+.social-box.google {
+    background-color: #DB4437;
+}
+
+.social-box:hover {
+    transform: scale(1.1);
+    background-color: #f2a900;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 12px;
+    color: #bbb;
+}
+
+/* Респонсивност за малки устройства */
+@media (max-width: 480px) {
+    .social-box {
+        width: 80px;
+        height: 80px;
+        font-size: 12px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
