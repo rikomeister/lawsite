@@ -210,30 +210,6 @@ body {
     margin: 5px 0;
 }
 
-/* Респонсивност за таблети */
-@media (max-width: 768px) {
-    .contact-section {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Респонсивност за телефони */
-@media (max-width: 480px) {
-    .iframe-container {
-        height: 300px;
-    }
-
-    .contact-section div {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .contact-section {
-        padding: 10px;
-    }
-}
-
 /* Основен стил за footer */
 .footer {
     background-color: hsl(240, 2%, 31%);
@@ -287,16 +263,27 @@ body {
     color: #bbb;
 }
 
-/* Респонсивност за малки устройства */
+/* Респонсив дизайн за телефони */
 @media (max-width: 480px) {
+    .header {
+        flex-direction: column; /* Подреждане на елементите един под друг */
+        padding: 10px; /* Намалено вътрешно отстояние */
+    }
+
+    .header nav {
+        margin-top: 10px; /* Отстояние между логото и навигацията */
+    }
+
     .social-box {
-        width: 80px;
-        height: 80px;
-        font-size: 12px;
+        width: 60px; /* Още по-малки боксове */
+        height: 60px; /* По-малка височина */
+        font-size: 10px; /* По-малък текст */
     }
 
     .footer-container {
-        flex-direction: column;
-        gap: 10px;
+        gap: 5px; /* Минимално разстояние */
     }
 }
+
+
+
