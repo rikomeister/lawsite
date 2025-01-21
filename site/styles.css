@@ -20,9 +20,8 @@ body {
     width: 100%; /* Разтяга го по цялата ширина на екрана */
     background-color: #141e61; /* Контрастен цвят за header */
     color: #fff; /* Бял текст за по-добър контраст */
-    padding: 10px 20px; /* Вътрешни отстояния за естетика */
+    padding: 15px 30px; /* Увеличени вътрешни отстояния за повече височина */
     display: flex; /* Flexbox за подравняване на съдържанието */
-    justify-content: space-between; /* Разделя елементите в header-а равномерно */
     align-items: center; /* Вертикално подравняване на елементите */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Сянка за по-добра видимост */
     z-index: 1000; /* Поставя header-а над останалото съдържание */
@@ -30,22 +29,59 @@ body {
 
 /* Лого в header-а */
 .header .logo {
-    font-size: 24px; /* Голям размер на текста за логото */
+    font-size: 28px; /* Голям размер на текста за логото */
     font-weight: bold; /* Удебелен текст */
+    margin-right: auto; /* Логото се позиционира най-вляво */
 }
 
 /* Линкове в навигацията на header-а */
+.header nav {
+    display: flex; /* Flexbox за подравняване на бутоните */
+    gap: 20px; /* Разстояние между бутоните */
+}
+
 .header nav a {
     color: #fff; /* Бял цвят за линковете */
     text-decoration: none; /* Премахва подчертаването */
-    margin: 0 15px; /* Отстояние между линковете */
-    font-size: 16px; /* Размер на текста на линковете */
+    padding: 10px 15px; /* Допълнителни вътрешни отстояния за по-добра зона за клик */
+    border-radius: 5px; /* Закръглени ъгли при оцветяване */
+    font-size: 18px; /* Размер на текста на линковете */
     font-weight: 500; /* Средно удебелен текст */
 }
 
 /* Ефект при задържане върху линковете */
 .header nav a:hover {
-    text-decoration: underline; /* Подчертаване при hover */
+    background-color: #f1c40f; /* Контрастен жълт фон */
+    color: #141e61; /* Син текст */
+    text-decoration: none; /* Без подчертаване */
+}
+
+/* Добавяне на активен линк */
+.header nav a.active {
+    background-color: #f1c40f; /* Контрастен жълт фон */
+    color: #141e61; /* Син текст */
+}
+
+/* Телефонният номер */
+.header .contact {
+    font-size: 18px; /* Размер на текста на телефона */
+    font-weight: 500; /* Средно удебелен текст */
+    margin-left: auto; /* Избутва телефона вдясно от бутоните */
+    margin-right: 30px; /* Центрира го между края на header-а и бутоните */
+    text-align: center; /* Центрира текста на телефонния номер */
+}
+
+/* Респонсив дизайн */
+@media (max-width: 768px) {
+    .header nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    .header .contact {
+        font-size: 16px;
+        margin-right: 15px; /* Намалено отстояние за малки екрани */
+    }
 }
 
 /* Оставя място за фиксирания header */
@@ -210,57 +246,44 @@ body {
     margin: 5px 0;
 }
 
-/* Основен стил за footer */
+/* Основен стил за футъра */
 .footer {
-    background-color: hsl(240, 2%, 31%);
-    padding: 20px 10px;
-    text-align: center;
-    color: #fff;
+    background-color: #202020; /* Тъмен фон */
+    color: #fff; /* Бял текст */
+    text-align: center; /* Центриран текст */
+    padding: 20px 10px; /* Вътрешни отстояния */
+    position: relative;
 }
 
+/* Контейнер за социалните икони */
 .footer-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 15px;
+    display: flex; /* Подравняване в ред */
+    justify-content: center; /* Центриране на съдържанието */
+    gap: 20px; /* Разстояние между иконите */
+    margin-bottom: 10px; /* Разстояние от текста */
 }
 
-.social-box {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background-color 0.3s;
+/* Линкове към социални мрежи */
+.social-link {
+    display: inline-block; /* Поддръжка на inline подравняване */
 }
 
-.social-box a {
-    text-decoration: none;
-    color: #fff;
+/* Стил за изображенията */
+.social-icon {
+    width: 40px; /* Ширина на иконите */
+    height: 40px; /* Височина на иконите */
+    transition: transform 0.3s ease; /* Ефект при задържане */
 }
 
-.social-box.facebook {
-    background-color: #4267B2;
+/* Ефект при задържане върху иконите */
+.social-icon:hover {
+    transform: scale(1.1); /* Леко увеличаване на размера */
 }
 
-.social-box.google {
-    background-color: #DB4437;
-}
-
-.social-box:hover {
-    transform: scale(1.1);
-    background-color: #f2a900;
-}
-
+/* Текст в долната част на футъра */
 .footer-text {
-    margin: 0;
-    font-size: 12px;
-    color: #bbb;
+    font-size: 14px;
+    color: #ccc;
 }
 
 /* Респонсив дизайн за телефони */
