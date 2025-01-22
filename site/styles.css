@@ -158,6 +158,11 @@ main {
 }
 
 
+.map-container {
+      display: flex; /* Подравнява децата в редица */
+      gap: 10px; /* Разстояние между картите */
+}
+
 .iframe-container {
     display: flex;
     justify-content: center;
